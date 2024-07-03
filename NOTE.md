@@ -20,6 +20,22 @@
 
 ![alt text](images\5.png)
 
-![alt text](images\5.png)
-
 ![alt text](images\6.png)
+
+![alt text](images\7.png)
+
+![alt text](images\8.png)
+
+- kubectl is the command used to communicate with cluster
+- kubernetes does not take up the responsibility of setting up the infrastructure (nodes and clusters)
+- k8s understand the objects
+- there is a **deployment** object which takes care of deployment of pods to nodes
+- once the deployment is created there is a **scheduler** in the master node which takes the responsibility of assigning pods to one of the worker nodes
+- **service object** is another object in k8s
+
+![alt text](images\8.png)
+
+kubectl expose deployment kube-dep --type=LoadBalancer --port=80
+
+this command is used to expose a pod port
+this was not working so I used **port-forward** option in kubectl
