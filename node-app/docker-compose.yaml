@@ -1,0 +1,6 @@
+services:
+  node:
+    build: .
+    ports:
+     - "80:80"
+    
