@@ -40,8 +40,8 @@ kubectl expose deployment kube-dep --type=LoadBalancer --port=80
 this command is used to expose a pod port
 this was not working so I used **port-forward** option in kubectl
 
-- kubectl set image deployment/<image-name> <old-image-name>:<new-image-name>  (to change the image of the containers)
+- kubectl set image deployment/"image-name" "old-image-name":"new-image-name"  (to change the image of the containers)
 - rollout command (--revision --to-revision, undo, restart. history, status)
 
 -matchExpressions
- - {key: <label>, operator: <In,NotIn>, values: ['label-value-1','label-value-2']}
+ - {key: "label", operator: "In,NotIn", values: ['label-value-1','label-value-2']}
