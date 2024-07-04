@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # This is the kind of the object
+metadata: 
+  name: node-app-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: node-app # this acts as the identifier for the deployment object to control the pods specified by this name
+      tier: backend
+  template: # this template is of pod object type therefore we don't need to specify "kind"
+    metadata:
+      labels:
+        pod: node-app
+        tier: backend 
+    spec:
+      containers:
+        - name: node-app-container
+          image: niranjan2602/kube-first-app
