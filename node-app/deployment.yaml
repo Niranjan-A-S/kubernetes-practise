@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: node-app-container
-          image: niranjan2602/kube-first-app
+          image: niranjan2602/kube-first-app:2
