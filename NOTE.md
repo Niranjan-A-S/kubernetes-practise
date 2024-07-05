@@ -50,3 +50,21 @@ this was not working so I used **port-forward** option in kubectl
 ## Volumes in Kubernetes
 ![alt text](images\10.png)
 ![alt text](images\11.png)
+
+
+## Types of volumes
+
+### emptyDir
+- this volume simply created an empty dir when the pods starts and keeps the data as long as the pod is alive.
+- this survives container restart, when the pod is removed this directory is removed
+- when the same  pod is recreated again the empty dir is also recreated
+- another downside is in the case of replicas, if one pod is under failure the request will go to other pod and the volume would not be found since the volumes are closely attached to pods 
+- 
+### hostPath
+- this allows to have directories on the host machine (nodes) running the pods rather than having it on the pods
+- then the data from that path will be exposed to different pods
+- so multiple pods can share same paths
+- the problem is this is node specific
+- it works for multiple pods running on same node
+- but if we have multiple nodes within the cluster or multiple clusters itself it is not a good option
+- this is suitable if we also wanna share some existing data within the node
