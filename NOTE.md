@@ -33,7 +33,7 @@
 - once the deployment is created there is a **scheduler** in the master node which takes the responsibility of assigning pods to one of the worker nodes
 - **service object** is another object in k8s
 
-![alt text](images\8.png)
+![alt text](images\9.png)
 
 kubectl expose deployment kube-dep --type=LoadBalancer --port=80
 
@@ -45,3 +45,8 @@ this was not working so I used **port-forward** option in kubectl
 
 -matchExpressions
  - {key: "label", operator: "In,NotIn", values: ['label-value-1','label-value-2']}
+
+
+## Volumes in Kubernetes
+![alt text](images\10.png)
+![alt text](images\11.png)
