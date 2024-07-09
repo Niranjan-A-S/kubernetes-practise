@@ -68,3 +68,13 @@ this was not working so I used **port-forward** option in kubectl
 - it works for multiple pods running on same node
 - but if we have multiple nodes within the cluster or multiple clusters itself it is not a good option
 - this is suitable if we also wanna share some existing data within the node
+
+### csi
+- it is an interface where other storage solutions like EFS can build driver solutions that utilize this interface
+
+![alt text](images\12.png)
+
+### Persistent volumes
+- the key idea is that the volume will be completely detached from the pod and it's lifecycle.
+- able to define it once and can be used by multiple pods
+- the pods can use the **Persistent Volume Claims** to access and interact with on or more standalone persistent volumes that are present within the cluster.
