@@ -13,14 +13,23 @@ spec:
         app: stories
     spec:
       containers:
-        - image: niranjan2602/stories:1
+        - image: niranjan2602/stories:2
           name: stories-container
+          env: 
+            - name: STORY_FOLDER
+              valueFrom:
+                configMapKeyRef:
+                  name: stories-env-cm
+                  key: folder
+              # value: 'story'
           volumeMounts: 
             - mountPath: /app/story # path in the container
               name: stories-volume
       volumes:
         - name:  stories-volume
+          persistentVolumeClaim: 
+            claimName: host-pvc
           # emptyDir: {} # The empty object means that it is not using any specific configurations (default). The volume is specific to pods
-          hostPath:
-            path: /data # path in the host machine
-            type: DirectoryOrCreate # use existing directory or create one
+          # hostPath:
+          #   path: /data # path in the host machine
+          #   type: DirectoryOrCreate # use existing directory or create one

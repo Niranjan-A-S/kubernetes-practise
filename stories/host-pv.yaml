@@ -1,0 +1,17 @@
+# This resource will work only in the single node environment(minikube)
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: host-pv
+spec: 
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce #single node 
+    # - ReadOnlyMany #multiple nodes
+    # - ReadWriteMany #multiple nodes
+  hostPath:
+    path: /data
+    type: DirectoryOrCreate 

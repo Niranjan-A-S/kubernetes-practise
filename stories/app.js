@@ -5,7 +5,8 @@ const express = require('express');
 
 const app = express();
 
-const filePath = path.join(__dirname, 'story', 'text.txt');
+const storyDir = process.env.STORY_FOLDER;
+const filePath = path.join(__dirname, storyDir, 'text.txt');
 
 app.use(express.json());
 
