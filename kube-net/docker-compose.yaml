@@ -1,0 +1,5 @@
+services:
+  auth-service:
+    build: auth-service
+    ports:
+      - 3001:3001
