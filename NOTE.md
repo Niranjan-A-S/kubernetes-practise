@@ -78,3 +78,7 @@ this was not working so I used **port-forward** option in kubectl
 - the key idea is that the volume will be completely detached from the pod and it's lifecycle.
 - able to define it once and can be used by multiple pods
 - the pods can use the **Persistent Volume Claims** to access and interact with on or more standalone persistent volumes that are present within the cluster.
+- **StorageClass** defines to kubernetes that how the storage should be provisioned
+- 
+![alt text](images\13.png)
+
