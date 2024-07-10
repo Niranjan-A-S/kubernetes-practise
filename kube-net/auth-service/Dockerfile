@@ -1,0 +1,17 @@
+FROM node:18-alpine
+
+ARG AUTH_SERVICE_PORT=3001
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN yarn install
+
+COPY . .
+
+ENV AUTH_SERVICE_PORT=${AUTH_SERVICE_PORT}
+
+EXPOSE ${AUTH_SERVICE_PORT}
+
+CMD ["node", "app"]
