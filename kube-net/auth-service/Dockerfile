@@ -10,8 +10,6 @@ RUN yarn install
 
 COPY . .
 
-ENV AUTH_SERVICE_PORT=${AUTH_SERVICE_PORT}
-
 EXPOSE ${AUTH_SERVICE_PORT}
 
 CMD ["node", "app"]
