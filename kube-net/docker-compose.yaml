@@ -3,8 +3,6 @@ services:
     build: 
       context: auth-service
     env_file: auth-service/.env
-    ports:
-      - 3001:3001
   tasks-service:
     build: 
       context: tasks-service
