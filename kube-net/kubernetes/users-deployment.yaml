@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template: 
+    metadata:
+      labels:
+        app: users
+    spec: 
+      containers:
+        - name: users
+          image: niranjan2602/docker-net-users
+          env:
+            - name: USERS_SERVICE_PORT
+              value: "3003"
